@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -59,18 +61,34 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-muted: var(--warning-muted);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --color-overlay: var(--overlay);
+  --color-map-control: var(--map-control);
+  --color-map-control-hover: var(--map-control-hover);
+  --color-map-control-border: var(--map-control-border);
+  --color-map-control-foreground: var(--map-control-foreground);
+  --color-map-label: var(--map-label);
+  --color-map-water: var(--map-water);
+  --color-map-aoi: var(--map-aoi);
+  --shadow-panel: var(--shadow-panel);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.25rem;
+  --background: oklch(0.965 0.004 235);
+  --foreground: oklch(0.24 0.018 235);
+  --card: oklch(0.992 0.002 235);
+  --card-foreground: oklch(0.24 0.018 235);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.48 0.105 221);
+  --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -79,22 +97,51 @@
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.86 0.008 235);
+  --input: oklch(0.82 0.01 235);
+  --ring: oklch(0.48 0.105 221);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar: oklch(0.22 0.018 240);
+  --sidebar-foreground: oklch(0.94 0.006 235);
+  --sidebar-primary: oklch(0.72 0.12 210);
+  --sidebar-primary-foreground: oklch(0.2 0.02 235);
+  --sidebar-accent: oklch(0.28 0.022 235);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.34 0.018 235);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar-muted: oklch(0.71 0.015 235);
+  --success: oklch(0.62 0.13 155);
+  --success-foreground: oklch(0.99 0 0);
+  --warning: oklch(0.66 0.14 72);
+  --warning-muted: oklch(0.94 0.035 78);
+  --danger: oklch(0.58 0.19 28);
+  --info: oklch(0.55 0.11 224);
+  --overlay: oklch(0.1 0.01 235 / 55%);
+  --map-land: oklch(0.89 0.012 220);
+  --map-terrain: oklch(0.83 0.02 180);
+  --map-grid: oklch(0.7 0.015 220 / 35%);
+  --map-grid-minor: oklch(0.75 0.01 220 / 15%);
+  --map-contour: oklch(0.67 0.03 170 / 48%);
+  --map-water: oklch(0.55 0.12 224);
+  --map-flood: oklch(0.57 0.16 235);
+  --map-velocity: oklch(0.65 0.17 35);
+  --map-arrival: oklch(0.68 0.13 145);
+  --map-difference: oklch(0.59 0.19 28);
+  --map-observed: oklch(0.55 0.14 188);
+  --map-dam: oklch(0.27 0.02 235);
+  --map-road: oklch(0.58 0.03 74);
+  --map-marker: oklch(0.62 0.18 30);
+  --map-label: oklch(0.25 0.02 235);
+  --map-aoi: oklch(0.55 0.16 42);
+  --map-control: oklch(0.985 0.003 235 / 94%);
+  --map-control-hover: oklch(0.93 0.008 235);
+  --map-control-border: oklch(0.72 0.01 235);
+  --map-control-foreground: oklch(0.23 0.02 235);
+  --shadow-panel: 0 1px 3px oklch(0.2 0.02 235 / 10%);
 }
 
 .dark {
@@ -140,5 +187,36 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+    font-size: 14px;
   }
 }
+
+@utility badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.15rem 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+@utility badge-neutral { color: var(--muted-foreground); background: var(--muted); }
+@utility badge-success { color: var(--success); border-color: color-mix(in oklab, var(--success) 40%, var(--border)); background: color-mix(in oklab, var(--success) 9%, var(--card)); }
+@utility badge-warning { color: var(--warning); border-color: color-mix(in oklab, var(--warning) 45%, var(--border)); background: var(--warning-muted); }
+@utility badge-danger { color: var(--danger); border-color: color-mix(in oklab, var(--danger) 40%, var(--border)); background: color-mix(in oklab, var(--danger) 8%, var(--card)); }
+@utility badge-info { color: var(--info); border-color: color-mix(in oklab, var(--info) 40%, var(--border)); background: color-mix(in oklab, var(--info) 8%, var(--card)); }
+@utility map-surface { background: var(--map-land); }
+@utility shadow-status { box-shadow: 0 0 8px color-mix(in oklab, var(--success) 65%, transparent); }
+@utility legend-1 { flex: 1; background: oklch(0.74 0.09 215); }
+@utility legend-2 { flex: 1; background: oklch(0.62 0.14 224); }
+@utility legend-3 { flex: 1; background: oklch(0.68 0.16 88); }
+@utility legend-4 { flex: 1; background: oklch(0.62 0.18 48); }
+@utility legend-5 { flex: 1; background: oklch(0.52 0.21 28); }
+
+button, a, input, select { letter-spacing: 0; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
