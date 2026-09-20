@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DatasetsRouteImport } from './routes/datasets'
+import { Route as ExportsRouteImport } from './routes/exports'
+import { Route as HadrRouteImport } from './routes/hadr'
+import { Route as ModelComparisonRouteImport } from './routes/model-comparison'
+import { Route as ResultsRouteImport } from './routes/results'
+import { Route as ScenariosRouteImport } from './routes/scenarios'
+import { Route as SimulationsRouteImport } from './routes/simulations'
+import { Route as StudyAreaRouteImport } from './routes/study-area'
+import { Route as ValidationRouteImport } from './routes/validation'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DatasetsRoute = DatasetsRouteImport.update({
+  id: '/datasets',
+  path: '/datasets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExportsRoute = ExportsRouteImport.update({
+  id: '/exports',
+  path: '/exports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HadrRoute = HadrRouteImport.update({
+  id: '/hadr',
+  path: '/hadr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModelComparisonRoute = ModelComparisonRouteImport.update({
+  id: '/model-comparison',
+  path: '/model-comparison',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultsRoute = ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScenariosRoute = ScenariosRouteImport.update({
+  id: '/scenarios',
+  path: '/scenarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulationsRoute = SimulationsRouteImport.update({
+  id: '/simulations',
+  path: '/simulations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudyAreaRoute = StudyAreaRouteImport.update({
+  id: '/study-area',
+  path: '/study-area',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValidationRoute = ValidationRouteImport.update({
+  id: '/validation',
+  path: '/validation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/datasets': typeof DatasetsRoute
+  '/exports': typeof ExportsRoute
+  '/hadr': typeof HadrRoute
+  '/model-comparison': typeof ModelComparisonRoute
+  '/results': typeof ResultsRoute
+  '/scenarios': typeof ScenariosRoute
+  '/simulations': typeof SimulationsRoute
+  '/study-area': typeof StudyAreaRoute
+  '/validation': typeof ValidationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/datasets': typeof DatasetsRoute
+  '/exports': typeof ExportsRoute
+  '/hadr': typeof HadrRoute
+  '/model-comparison': typeof ModelComparisonRoute
+  '/results': typeof ResultsRoute
+  '/scenarios': typeof ScenariosRoute
+  '/simulations': typeof SimulationsRoute
+  '/study-area': typeof StudyAreaRoute
+  '/validation': typeof ValidationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/datasets': typeof DatasetsRoute
+  '/exports': typeof ExportsRoute
+  '/hadr': typeof HadrRoute
+  '/model-comparison': typeof ModelComparisonRoute
+  '/results': typeof ResultsRoute
+  '/scenarios': typeof ScenariosRoute
+  '/simulations': typeof SimulationsRoute
+  '/study-area': typeof StudyAreaRoute
+  '/validation': typeof ValidationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/datasets'
+    | '/exports'
+    | '/hadr'
+    | '/model-comparison'
+    | '/results'
+    | '/scenarios'
+    | '/simulations'
+    | '/study-area'
+    | '/validation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/datasets'
+    | '/exports'
+    | '/hadr'
+    | '/model-comparison'
+    | '/results'
+    | '/scenarios'
+    | '/simulations'
+    | '/study-area'
+    | '/validation'
+  id:
+    | '__root__'
+    | '/'
+    | '/datasets'
+    | '/exports'
+    | '/hadr'
+    | '/model-comparison'
+    | '/results'
+    | '/scenarios'
+    | '/simulations'
+    | '/study-area'
+    | '/validation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DatasetsRoute: typeof DatasetsRoute
+  ExportsRoute: typeof ExportsRoute
+  HadrRoute: typeof HadrRoute
+  ModelComparisonRoute: typeof ModelComparisonRoute
+  ResultsRoute: typeof ResultsRoute
+  ScenariosRoute: typeof ScenariosRoute
+  SimulationsRoute: typeof SimulationsRoute
+  StudyAreaRoute: typeof StudyAreaRoute
+  ValidationRoute: typeof ValidationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/datasets': {
+      id: '/datasets'
+      path: '/datasets'
+      fullPath: '/datasets'
+      preLoaderRoute: typeof DatasetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exports': {
+      id: '/exports'
+      path: '/exports'
+      fullPath: '/exports'
+      preLoaderRoute: typeof ExportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hadr': {
+      id: '/hadr'
+      path: '/hadr'
+      fullPath: '/hadr'
+      preLoaderRoute: typeof HadrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/model-comparison': {
+      id: '/model-comparison'
+      path: '/model-comparison'
+      fullPath: '/model-comparison'
+      preLoaderRoute: typeof ModelComparisonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/results': {
+      id: '/results'
+      path: '/results'
+      fullPath: '/results'
+      preLoaderRoute: typeof ResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scenarios': {
+      id: '/scenarios'
+      path: '/scenarios'
+      fullPath: '/scenarios'
+      preLoaderRoute: typeof ScenariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulations': {
+      id: '/simulations'
+      path: '/simulations'
+      fullPath: '/simulations'
+      preLoaderRoute: typeof SimulationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/study-area': {
+      id: '/study-area'
+      path: '/study-area'
+      fullPath: '/study-area'
+      preLoaderRoute: typeof StudyAreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/validation': {
+      id: '/validation'
+      path: '/validation'
+      fullPath: '/validation'
+      preLoaderRoute: typeof ValidationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DatasetsRoute: DatasetsRoute,
+  ExportsRoute: ExportsRoute,
+  HadrRoute: HadrRoute,
+  ModelComparisonRoute: ModelComparisonRoute,
+  ResultsRoute: ResultsRoute,
+  ScenariosRoute: ScenariosRoute,
+  SimulationsRoute: SimulationsRoute,
+  StudyAreaRoute: StudyAreaRoute,
+  ValidationRoute: ValidationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
